@@ -21,6 +21,8 @@ Caso de Teste 02: Senha invalida no site blip
 	Quando realizar login
 	Entao a devo validar mensagem, não me permitindo acesso.
 
+
+#in dev
 #Caso de Teste 03: Esqueci a senha
 #	Dado que possuo usuario valido, mas nao senha
 #	Quando clicar em "Forgot your password?"
