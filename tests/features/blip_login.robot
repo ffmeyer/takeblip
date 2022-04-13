@@ -23,9 +23,9 @@ Caso de Teste 02: Senha invalida no site blip
 
 
 #in dev
-#Caso de Teste 03: Esqueci a senha
-#	Dado que possuo usuario valido, mas nao senha
-#	Quando clicar em "Forgot your password?"
-#	E o sistema exibe nova tela com opcao de mudança de senha
-#	E preencho os dados solicitados e envio
-#	Entao o usuario deve receber um email com alteracao de senha do usuario.
+Caso de Teste 03: Esqueci a senha
+	[Tags]		change
+	Dado que possuo usuario valido, mas nao senha
+	Quando clicar em Forgot your password?
+	E preencho os dados solicitados e envio
+	Entao o usuario deve exibir mensagem de envio de email
