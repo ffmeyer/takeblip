@@ -14,7 +14,7 @@ Caso de Teste 01: Login valido no site blip
 	Entao a devo validar o login na aplicacao
 
 
-Caso de Teste 02: Login valido no site blip
+Caso de Teste 02: Login invalida valido no site blip
 	Dado que não possuo credenciais validas
 	Quando realizar login
 	Entao a devo validar mensagem, não me permitindo acesso.
