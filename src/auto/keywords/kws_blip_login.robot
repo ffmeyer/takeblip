@@ -38,6 +38,6 @@ Dado que não possuo credenciais validas
 
 
 Entao a devo validar mensagem, não me permitindo acesso.
-    Wait Until Element Is Visible       xpath=//div[@class='toast__content']/bds-typo
-    ${MESSAGE}      Get Text       xpath=//div[@class='toast__content']/bds-typo
-    Should Contain          Invalid login and/or password
+    ${SHADOW1}          Execute Javascript  const ele = document.querySelector("bds-toast[class=hydrated]"); return ele.shadowRoot.querySelector("bds-typo[class=hydrated]")
+    ${MESSAGE}          Get Text            ${SHADOW1}
+    Should Contain      ${MESSAGE}          Invalid login and/or password
