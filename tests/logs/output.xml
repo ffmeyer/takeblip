@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.1 on win32)" generated="20220413 08:10:14.375" rpa="false" schemaversion="3">
+<suite id="s1" name="Blip Login" source="C:\opt\takeblip\tests\features\blip_login.robot">
+<test id="s1-t1" name="Caso de Teste 01: Login valido no site blip" line="11">
+<kw name="Abrir navegador" library="hooks" type="SETUP">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220413 08:10:14.789" endtime="20220413 08:10:14.789"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220413 08:10:14.790" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220413 08:10:14.789" endtime="20220413 08:10:16.023"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://account.blip.ai/login</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220413 08:10:16.023" level="INFO">Opening url 'https://account.blip.ai/login'</msg>
+<status status="PASS" starttime="20220413 08:10:16.023" endtime="20220413 08:10:16.720"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220413 08:10:16.721" endtime="20220413 08:10:16.835"/>
+</kw>
+<status status="PASS" starttime="20220413 08:10:14.789" endtime="20220413 08:10:16.835"/>
+</kw>
+<kw name="Dado que possuo credenciais validas" library="kws_blip_login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=${BLIP_LOGIN.input_user}</arg>
+<arg>${LOGIN_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220413 08:10:16.837" level="INFO">Typing text 'ffmeyer@outlook.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20220413 08:10:16.836" endtime="20220413 08:10:16.990"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=${BLIP_LOGIN.input_pass}</arg>
+<arg>${LOGIN_PASS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220413 08:10:16.991" level="INFO">Typing text 'ryT3#9yV1@5M' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20220413 08:10:16.990" endtime="20220413 08:10:17.125"/>
+</kw>
+<status status="PASS" starttime="20220413 08:10:16.836" endtime="20220413 08:10:17.125"/>
+</kw>
+<kw name="Quando realizar login" library="kws_blip_login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=${BLIP_LOGIN.click_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220413 08:10:17.128" level="INFO">Clicking element 'id=blip-login'.</msg>
+<status status="PASS" starttime="20220413 08:10:17.127" endtime="20220413 08:10:19.221"/>
+</kw>
+<status status="PASS" starttime="20220413 08:10:17.126" endtime="20220413 08:10:19.221"/>
+</kw>
+<kw name="Entao a devo validar o login na aplicacao" library="kws_blip_login">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=${BLIP_LOGIN.valid_user_logged_in}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220413 08:10:19.224" endtime="20220413 08:10:19.275"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${NAME}</var>
+<arg>css=${BLIP_LOGIN.valid_user_logged_in}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220413 08:10:19.299" level="INFO">${NAME} = Felipe Meyer</msg>
+<status status="PASS" starttime="20220413 08:10:19.275" endtime="20220413 08:10:19.299"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${NAME}</arg>
+<arg>${FULL_NAME}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220413 08:10:19.299" endtime="20220413 08:10:19.300"/>
+</kw>
+<status status="PASS" starttime="20220413 08:10:19.223" endtime="20220413 08:10:19.300"/>
+</kw>
+<kw name="Fechar navegador" library="hooks" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 08:10:19.467" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 08:10:19.301" endtime="20220413 08:10:19.467"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220413 08:10:19.467" endtime="20220413 08:10:21.648"/>
+</kw>
+<status status="PASS" starttime="20220413 08:10:19.301" endtime="20220413 08:10:21.648"/>
+</kw>
+<tag>passed</tag>
+<status status="PASS" starttime="20220413 08:10:14.788" endtime="20220413 08:10:21.650"/>
+</test>
+<test id="s1-t2" name="Caso de Teste 02: Senha invalida no site blip" line="18">
+<kw name="Abrir navegador" library="hooks" type="SETUP">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220413 08:10:21.660" endtime="20220413 08:10:21.661"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220413 08:10:21.662" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220413 08:10:21.661" endtime="20220413 08:10:22.930"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://account.blip.ai/login</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220413 08:10:22.930" level="INFO">Opening url 'https://account.blip.ai/login'</msg>
+<status status="PASS" starttime="20220413 08:10:22.930" endtime="20220413 08:10:23.583"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220413 08:10:23.583" endtime="20220413 08:10:23.703"/>
+</kw>
+<status status="PASS" starttime="20220413 08:10:21.658" endtime="20220413 08:10:23.703"/>
+</kw>
+<kw name="Dado que não possuo credenciais validas" library="kws_blip_login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=${BLIP_LOGIN.input_user}</arg>
+<arg>${LOGIN_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220413 08:10:23.706" level="INFO">Typing text 'ffmeyer@outlook.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20220413 08:10:23.705" endtime="20220413 08:10:23.891"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=${BLIP_LOGIN.input_pass}</arg>
+<arg>${WRONG_PASS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220413 08:10:23.892" level="INFO">Typing text '123456' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20220413 08:10:23.891" endtime="20220413 08:10:24.021"/>
+</kw>
+<status status="PASS" starttime="20220413 08:10:23.704" endtime="20220413 08:10:24.022"/>
+</kw>
+<kw name="Quando realizar login" library="kws_blip_login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=${BLIP_LOGIN.click_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220413 08:10:24.023" level="INFO">Clicking element 'id=blip-login'.</msg>
+<status status="PASS" starttime="20220413 08:10:24.023" endtime="20220413 08:10:25.030"/>
+</kw>
+<status status="PASS" starttime="20220413 08:10:24.022" endtime="20220413 08:10:25.030"/>
+</kw>
+<kw name="Entao a devo validar mensagem, não me permitindo acesso." library="kws_blip_login">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${SHADOW1}</var>
+<arg>const ele = document.querySelector("bds-toast[class=hydrated]"); return ele.shadowRoot.querySelector("bds-typo[class=hydrated]")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220413 08:10:25.032" level="INFO">Executing JavaScript:
+const ele = document.querySelector("bds-toast[class=hydrated]"); return ele.shadowRoot.querySelector("bds-typo[class=hydrated]")
+Without any arguments.</msg>
+<msg timestamp="20220413 08:10:25.037" level="INFO">${SHADOW1} = &lt;selenium.webdriver.remote.webelement.WebElement (session="ca73891f4a9178591e9dd64da335d7a5", element="51365a3b-6881-4295-88ec-8195870f78b7")&gt;</msg>
+<status status="PASS" starttime="20220413 08:10:25.031" endtime="20220413 08:10:25.037"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${MESSAGE}</var>
+<arg>${SHADOW1}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220413 08:10:25.050" level="INFO">${MESSAGE} = Invalid login and/or password</msg>
+<status status="PASS" starttime="20220413 08:10:25.037" endtime="20220413 08:10:25.050"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${MESSAGE}</arg>
+<arg>Invalid login and/or password</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220413 08:10:25.050" endtime="20220413 08:10:25.050"/>
+</kw>
+<status status="PASS" starttime="20220413 08:10:25.031" endtime="20220413 08:10:25.050"/>
+</kw>
+<kw name="Fechar navegador" library="hooks" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220413 08:10:25.504" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 08:10:25.051" endtime="20220413 08:10:25.504"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220413 08:10:25.505" endtime="20220413 08:10:27.693"/>
+</kw>
+<status status="PASS" starttime="20220413 08:10:25.051" endtime="20220413 08:10:27.693"/>
+</kw>
+<tag>error</tag>
+<status status="PASS" starttime="20220413 08:10:21.656" endtime="20220413 08:10:27.695"/>
+</test>
+<doc>Aqui neste arquivo estarão presentes todos os testes relativos a login</doc>
+<status status="PASS" starttime="20220413 08:10:14.378" endtime="20220413 08:10:27.702"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">error</stat>
+<stat pass="1" fail="0" skip="0">passed</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Blip Login">Blip Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

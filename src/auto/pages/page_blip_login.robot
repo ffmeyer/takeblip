@@ -3,4 +3,7 @@ Documentation        Aqui estarão presentes todos os elementos mapeados da tela
 
 *** Variables ***
 &{BLIP_LOGIN}
-...            input_search=input[name="q"]
+...            input_user=email
+...            input_pass=password
+...            click_login=blip-login
+...            valid_user_logged_in=div p
